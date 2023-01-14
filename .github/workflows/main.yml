@@ -30,4 +30,4 @@ jobs:
         git init
         git add -A
         git commit -m "github action auto build"
-        git push -f HEAD:gh-pages
+        git push -f origin HEAD:gh-pages
