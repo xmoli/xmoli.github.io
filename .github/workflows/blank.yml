@@ -33,6 +33,8 @@ jobs:
         run: npm install
       - name: build
         run: npm run build
+      - name: status
+        run: ls
   # Single deploy job since we're just deploying
   deploy:
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
