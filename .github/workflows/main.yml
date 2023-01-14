@@ -16,5 +16,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Deploy react app to github pages
-      uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3.6.0
+    - name: install dependencies
+      run: npm i
+    - name: build
+      run: npm run build
+    - name: git config
+      run: |
+        cd dist
+        git config --global user.email Actions@github.com
+        git config --global user.name Actions
+        git init
+        git add -A
+        git commit -m "github action auto build"
+        git push -f HEAD:gh-pages
